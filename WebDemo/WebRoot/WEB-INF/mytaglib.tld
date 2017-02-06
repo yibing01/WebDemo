@@ -82,4 +82,18 @@
  		<fragment>true</fragment>
  	</attribute>
  </tag>
+ <tag>
+ 	<!-- 定义标签名 -->
+ 	<name>fragment</name>
+ 	<!-- 定义标签处理类 -->
+ 	<tag-class>jsptag.FragmentTag</tag-class>
+ 	<!-- 指定该标签不支持标签体 -->
+ 	<body-content>empty</body-content>
+ 	<!-- 定义标签属性：fragment -->
+ 	<attribute>
+ 		<name>fragment</name>
+ 		<required>true</required>
+ 		<fragment>true</fragment>
+ 	</attribute>
+ </tag>
 </taglib>
