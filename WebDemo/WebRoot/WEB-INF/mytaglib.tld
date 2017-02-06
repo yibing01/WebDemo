@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+ <description>A tag library exercising SimpleTag handlers.</description>
+ <tlib-version>1.0</tlib-version>
+ <short-name>mytaglib</short-name>
+ <uri>/mytaglib</uri>
+ <!-- 第一个自定义标签 -->
+ <tag>
+  <name>helloWorld</name>
+  <tag-class>jsptag.HelloWorldTag</tag-class>
+  <body-content>empty</body-content>
+ </tag>
+ <!-- 第二个自定义标签 -->
+ <tag>
+ 	<!-- 定义标签名 -->
+ 	<name>query</name>
+ 	<!-- 定义标签处理类 -->
+ 	<tag-class>jsptag.QueryTag</tag-class>
+ 	<!-- 定义标签库为空 -->
+ 	<body-content>empty</body-content>
+ 	<!-- 配置标签属性 driver、url、username、password、sql -->
+ 	<attribute>
+ 		<name>driver</name>
+ 		<required>true</required>
+ 		<fragment>true</fragment>
+ 	</attribute>
+ 	<attribute>
+ 		<name>url</name>
+ 		<required>true</required>
+ 		<fragment>true</fragment>
+ 	</attribute>
+ 	<attribute>
+ 		<name>username</name>
+ 		<required>true</required>
+ 		<fragment>true</fragment>
+ 	</attribute>
+ 	<attribute>
+ 		<name>password</name>
+ 		<required>true</required>
+ 		<fragment>true</fragment>
+ 	</attribute>
+ 	<attribute>
+ 		<name>sql</name>
+ 		<required>true</required>
+ 		<fragment>true</fragment>
+ 	</attribute>
+ </tag>
+ <!-- 带有标签体的自定义标签 -->
+ <tag>
+ 	<!-- 定义标签名 -->
+ 	<name>iterator</name>
+ 	<!-- 定义标签处理类 -->
+ 	<tag-class>jsptag.IteratorTag</tag-class>
+ 	<!-- 定义标签体不允许出现jsp脚本 -->
+ 	<body-content>scriptless</body-content>
+ 	<!-- 配置标签属性 -->
+ 	<attribute>
+ 		<name>collection</name>
+ 		<required>true</required>
+ 		<fragment>true</fragment>
+ 	</attribute>
+ 	<attribute>
+ 		<name>item</name>
+ 		<required>true</required>
+ 		<fragment>true</fragment>
+ 	</attribute>
+ </tag>
+</taglib>

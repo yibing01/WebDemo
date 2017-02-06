@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd ">
+	
+	
+	<!-- 配置web应用的首页列表 -->
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<!-- 配置Servlet -->
+	<servlet>
+		<!-- 指定Servlet的名字 -->
+		<servlet-name>config</servlet-name>
+		<!-- 指定将哪个jsp页面设为Servlet -->
+		<jsp-file>/configTest1.jsp</jsp-file>
+		<!-- 配置名为name的参数，值为mike -->
+		<init-param>
+			<param-name>name</param-name>
+			<param-value>mike</param-value>
+		</init-param>
+		<!-- 配置名为age的参数，值为21 -->
+		<init-param>
+			<param-name>age</param-name>
+			<param-value>21</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<!-- 将config Servlet配置到/config路径 -->
+		<servlet-name>config</servlet-name>
+		<url-pattern>/config</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 配置Servlet的名字 -->
+	<servlet>
+		<!-- 指定Servlet的名字，相当于指定@WebServlet的name属性 -->
+		<servlet-name>firstServlet</servlet-name>
+		<!-- 指定Servlet的实现类 -->
+		<servlet-class>servlet.FirstServlet</servlet-class>
+		<!-- 指定是否在程序启动时，创建Servlet实例 ,接收的整型值越小越先启动-->
+		<!-- <load-on-startup>0</load-on-startup> -->
+	</servlet>
+	<!-- 配置Servlet的URL -->
+	<servlet-mapping>
+		<!-- 指定Servlet的名字 -->
+		<servlet-name>firstServlet</servlet-name>
+		<!-- 指定Servlet映射的URL地址，相当于为@WebServlet指定urlPattern属性 -->
+		<url-pattern>/firstServlet</url-pattern>
+	</servlet-mapping>	
+	<!-- 配置自定义标签库 -->
+	<jsp-config>
+		<taglib>
+			<taglib-uri>/mytaglib</taglib-uri>
+			<taglib-location>/WEB-INF/mytaglib.tld</taglib-location>
+		</taglib>
+	</jsp-config>
+</web-app>
