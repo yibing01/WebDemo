@@ -24,7 +24,7 @@ public class FragmentTag extends SimpleTagSupport {
 		out.println("<div style='padding:10px;border:1px solid black'>");
 		out.println("<h3>下面是传入的动态jsp片段</h3>");
 		//调用输出页面片段
-		fragment.invoke(null);
+		fragment.invoke( null );
 		out.println("</div>");
 	}
 	

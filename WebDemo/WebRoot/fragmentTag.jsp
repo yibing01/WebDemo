@@ -25,15 +25,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <h2>显示自定义标签内容</h2>
-    <mytaglib:fragment fragment="fragment"/>
-    <jsp:attribute name="fragment">
-    	<!-- 下面是动态的jsp页面片段 -->
-    	<mytaglib:helloWorld/>
-    </jsp:attribute><br>
-    <mytaglib:fragment fragment="fragment1"/>
-    <jsp:attribute name="fragment1">
-    	<!-- 下面是动态的jsp页面片段 -->
-    	${pageContext.request.remoteAddr}
-    </jsp:attribute><br>
+    <mytaglib:fragment>
+    	<jsp:attribute name="fragment">
+    		<!-- 下面是动态的jsp页面片段 -->
+    		<mytaglib:helloWorld/>
+    	</jsp:attribute>
+    </mytaglib:fragment><br>
+    <mytaglib:fragment>
+    	<jsp:attribute name="fragment">
+    		<!-- 下面是动态的jsp页面片段 -->
+    		${pageContext.request.remoteAddr}
+    	</jsp:attribute>
+    </mytaglib:fragment><br>
   </body>
 </html>
