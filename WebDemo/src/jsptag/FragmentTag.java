@@ -6,7 +6,12 @@ import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.JspFragment;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
-//可使用页面片段作为属性的标签
+/**
+ * 可使用页面片段作为属性的标签
+ * @author yibing
+ * @email  yibing.zn@gmail.com
+ * 2017年2月6日 上午11:21:21
+ */
 public class FragmentTag extends SimpleTagSupport {
 	private JspFragment fragment;
 	//属性的getter和setter方法

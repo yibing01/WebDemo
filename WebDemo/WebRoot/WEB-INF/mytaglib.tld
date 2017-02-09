@@ -96,4 +96,12 @@
  		<fragment>true</fragment>
  	</attribute>
  </tag>
+ <!-- 定义接收动态属性的标签 -->
+ <tag>
+ 	<name>dynamic</name>
+ 	<tag-class>jsptag.DynamicAttributesTag</tag-class>
+ 	<body-content>empty</body-content>
+ 	<!-- 指定支持动态属性 -->
+ 	<dynamic-attributes>true</dynamic-attributes>
+ </tag>
 </taglib>
