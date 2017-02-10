@@ -4,10 +4,11 @@ import java.util.Hashtable;
 import java.util.Map;
 
 import javax.servlet.ServletContext;
+import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
-
+@WebListener
 public class onLineListener implements HttpSessionListener {
 	//用户与服务器之间开始session触发该方法
 	@Override
@@ -21,6 +22,7 @@ public class onLineListener implements HttpSessionListener {
 			String user = (String) session.getAttribute("user");
 			//未登陆用户当游客处理
 			user = (user == null) ? "游客" : user;
+			@SuppressWarnings("unchecked")
 			Map<String,String> online = (Map<String, String>) application.getAttribute("online");
 			if(online == null){
 				online = new Hashtable<String,String>();
@@ -36,6 +38,7 @@ public class onLineListener implements HttpSessionListener {
 		HttpSession session = se.getSession();
 		ServletContext application = session.getServletContext();
 		String sessionId = session.getId();
+		@SuppressWarnings("unchecked")
 		Map<String,String> online = (Map<String, String>) application.getAttribute("online");
 		if(online != null){
 			//删除该用户的在线信息

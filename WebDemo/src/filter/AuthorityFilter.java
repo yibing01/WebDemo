@@ -20,13 +20,13 @@ import javax.servlet.http.HttpSession;
  * @email  yibing.zn@gmail.com
  * 2017年2月6日 下午2:00:54
  */
-@WebFilter(filterName="filter0_authority"
+/*@WebFilter(filterName="filter0_authority"
 		,urlPatterns={"/*"}
 		,initParams={
 				@WebInitParam(name="encoding",value="gbk"),
 				@WebInitParam(name="loginPage",value="/login.jsp"),
 				@WebInitParam(name="proLogin",value="/proLogin.jsp")
-		})
+		})*/
 public class AuthorityFilter implements Filter {
 	//FilterConfig用于访问Filter的配置信息
 	private FilterConfig config;

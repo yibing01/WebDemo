@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.0" xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd ">
-	
+	<!-- 配置Web应用初始化参数 -->
+	<context-param>
+		<param-name>driver</param-name>
+		<param-value>oracle.jdbc.driver.OracleDriver</param-value>
+	</context-param>
+	<context-param>
+		<param-name>url</param-name>
+		<param-value>jdbc:oracle:thin:@localhost:1521:oracle</param-value>
+	</context-param>
+	<context-param>
+		<param-name>username</param-name>
+		<param-value>system</param-value>
+	</context-param>
+	<context-param>
+		<param-name>password</param-name>
+		<param-value>admin</param-value>
+	</context-param>
 	
 	<!-- 配置web应用的首页列表 -->
 	<welcome-file-list>

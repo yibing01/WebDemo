@@ -60,7 +60,7 @@ public class LoginServlet extends HttpServlet {
 		}
 		//如果出错转发至重新登陆
 		if(errorMsg != null  && !errorMsg.equals("")){
-			rd = request.getRequestDispatcher("/login.jsp");
+			rd = request.getRequestDispatcher("/logins.jsp");
 			request.setAttribute("error", errorMsg);
 			rd.forward(request, response);
 			return;
