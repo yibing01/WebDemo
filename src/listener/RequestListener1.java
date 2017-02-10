@@ -31,7 +31,7 @@ public class RequestListener1 implements ServletRequestListener {
 			DbDao dao = new DbDao("oracle.jdbc.driver.OracleDriver", 
 					"jdbc:oracle:thin:@localhost:1521:oracle", 
 					"system", "admin");
-			ResultSet rs = dao.query("select * from online_info where sessionId = ?", true,sessionId);
+			ResultSet rs = dao.query("select * from SCOTT.online_info where sessionId = ?",sessionId);
 			//如果该用户对应的sessionId存在，表明是旧的会话
 			if(rs.next()){
 				//更新记录
@@ -39,10 +39,13 @@ public class RequestListener1 implements ServletRequestListener {
 				rs.updateLong(5, System.currentTimeMillis());
 				rs.updateRow();
 				rs.close();
+				System.out.println("已更新！");
 			}else {
 				//插入用户的在线信息
-				dao.insert("insert into online_info values (?,?,?,?,?)",
+				System.out.println("准备插入数据");
+				dao.insert("insert into SCOTT.online_info values (?,?,?,?,?)",
 						sessionId,user,ip,page,System.currentTimeMillis());
+				System.out.println("插入数据完成");
 			}
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
