@@ -31,7 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	DbDao dao = new DbDao("oracle.jdbc.driver.OracleDriver",
     			"jdbc:oracle:thin:@localhost:1521:oracle","system","admin");
     	//查询在线用户的记录
-    	ResultSet rs = dao.query("select * from SCOTT.online_info");
+    	ResultSet rs = dao.query("select sessionId,username,ip,pager,timer from SCOTT.online_info");
     	while(rs.next()){
     %>
     <tr>

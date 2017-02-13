@@ -18,7 +18,7 @@
 		//创建statement对象
 		Statement stmt = conn.createStatement();
 		//执行查询获取ResultSet对象
-		ResultSet rs = stmt.executeQuery("select * from scott.emp");
+		ResultSet rs = stmt.executeQuery("select empno,ename,job,mgr,hiredate,sal,comm,deptno from scott.emp");
 	 %>
 	 <table bgcolor="#9999dd" border="1" width="400">
 	 <%

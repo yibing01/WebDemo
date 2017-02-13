@@ -26,7 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
     <mytaglib:query driver="oracle.jdbc.driver.OracleDriver" 
     	url="jdbc:oracle:thin:@localhost:1521:oracle" 
-    	sql="select * from scott.usertable" 
+    	sql="select username,password from scott.usertable" 
     	username="system" password="admin"/>
   </body>
 </html>

@@ -27,7 +27,7 @@ public class OnlineListener1 implements ServletContextListener {
 					DbDao dao = new DbDao("oracle.jdbc.driver.OracleDriver",
 							"jdbc:oracle:thin:@localhost:1521:oracle",
 							"system","admin");
-					ResultSet rs = dao.query("select * from SCOTT.online_info");
+					ResultSet rs = dao.query("select sessionID,username,ip,pager,timer from SCOTT.online_info");
 					StringBuffer beRemove = new StringBuffer("(");
 					while (rs.next()) {
 						//如果距离上次访问时间超过了指定时间
@@ -41,7 +41,7 @@ public class OnlineListener1 implements ServletContextListener {
 					//有需要删除的记录
 					if(beRemove.length() > 3){
 						beRemove.setLength(beRemove.length() - 3);
-						beRemove.append(")");
+						beRemove.append("')");
 						dao.modify("delete from SCOTT.online_info where sessionId in " + beRemove.toString());
 					}
 					dao.closeConnection();

@@ -31,12 +31,12 @@ public class RequestListener1 implements ServletRequestListener {
 			DbDao dao = new DbDao("oracle.jdbc.driver.OracleDriver", 
 					"jdbc:oracle:thin:@localhost:1521:oracle", 
 					"system", "admin");
-			ResultSet rs = dao.query("select * from SCOTT.online_info where sessionId = ?",sessionId);
+			ResultSet rs = dao.query("select sessionID,username,ip,pager,timer from SCOTT.online_info where sessionId = ?",sessionId);
 			//如果该用户对应的sessionId存在，表明是旧的会话
 			if(rs.next()){
 				//更新记录
-				rs.updateString(4, page);
-				rs.updateLong(5, System.currentTimeMillis());
+				rs.updateString("pager", page);
+				rs.updateLong("timer", System.currentTimeMillis());
 				rs.updateRow();
 				rs.close();
 				System.out.println("已更新！");

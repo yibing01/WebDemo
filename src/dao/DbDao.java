@@ -55,7 +55,7 @@ public class DbDao {
 	}
 	//插入记录
 	public boolean insert(String sql,Object...args) throws ClassNotFoundException, SQLException{
-		PreparedStatement pstm = getConnection().prepareStatement(sql);
+		PreparedStatement pstm = getConnection().prepareStatement(sql,ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 		for(int i = 0; i < args.length; i++){
 			pstm.setObject(i + 1, args[i]);
 		}
@@ -66,7 +66,7 @@ public class DbDao {
 	}
 	//执行查询
 	public ResultSet query(String sql,Object...args) throws ClassNotFoundException, SQLException{
-		PreparedStatement pstm = getConnection().prepareStatement(sql);
+		PreparedStatement pstm = getConnection().prepareStatement(sql,ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 		for(int i = 0; i < args.length; i++){
 			pstm.setObject(i + 1, args[i]);
 		}
@@ -74,7 +74,7 @@ public class DbDao {
 	}
 	//执行修改
 	public void modify(String sql,Object...args) throws ClassNotFoundException, SQLException{
-		PreparedStatement pstm = getConnection().prepareStatement(sql);
+		PreparedStatement pstm = getConnection().prepareStatement(sql,ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 		for(int i = 0; i < args.length; i++){
 			pstm.setObject(i + 1, args[i]);
 		}

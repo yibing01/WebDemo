@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
 					"jdbc:oracle:thin:@localhost:1521:oracle",
 					"system","admin");
 			//查询结果集
-			ResultSet rs = dao.query("select * from scott.usertable where username = ?", username);
+			ResultSet rs = dao.query("select username,password from scott.usertable where username = ?", username);
 			if(rs.next()){
 				//用户名和密码匹配
 				if(rs.getString("password").equals(password)){
