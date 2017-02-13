@@ -21,6 +21,7 @@
  <tlib-version>1.0</tlib-version>
  <short-name>mytaglib</short-name>
  <uri>/mytaglib</uri>
+ 
  <!-- 第一个自定义标签 -->
  <tag>
   <name>helloWorld</name>
@@ -104,4 +105,23 @@
  	<!-- 指定支持动态属性 -->
  	<dynamic-attributes>true</dynamic-attributes>
  </tag>
+ 
+ <!-- 定义第一个函数 -->
+ <function>
+ 	<!-- 定义函数名 -->
+ 	<name>reverse</name>
+ 	<!-- 定义函数处理类 -->
+ 	<function-class>ex.Functions</function-class>
+ 	<!-- 定义函数的实现方法 -->
+ 	<function-signature>String reverse(String)</function-signature>
+ </function>
+ <!-- 定义第二个函数 -->
+ <function>
+ 	<!-- 定义函数名 -->
+ 	<name>countChar</name>
+ 	<!-- 定义函数处理类 -->
+ 	<function-class>ex.Functions</function-class>
+ 	<!-- 定义函数的实现方法 -->
+ 	<function-signature>int countChar(String)</function-signature>
+ </function>
 </taglib>

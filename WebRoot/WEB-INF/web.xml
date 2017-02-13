@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.0" xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd ">
+	<!-- JSP页面的配置信息 -->
+	<jsp-config>
+		<jsp-property-group>
+			<!-- 对哪些文件应用配置 -->
+			<url-pattern>/noscript/*</url-pattern>
+			<!-- 忽略表达式语言 -->
+			<el-ignored>true</el-ignored>
+			<!-- 页面编码字符集 -->
+			<page-encoding>UTF-8</page-encoding>
+			<!-- 不允许使用Java脚本 -->
+			<scripting-invalid>true</scripting-invalid>
+			<!-- 隐式导入页面头 -->
+			<include-prelude>/inc/top.jspf</include-prelude>
+			<!-- 隐式导入页面尾 -->
+			<include-coda>/inc/bottom.jspf</include-coda>
+		</jsp-property-group>
+		<jsp-property-group>
+			<!-- 对哪些文件应用配置 -->
+			<url-pattern>/inc/*</url-pattern>
+			<!-- 忽略表达式语言 -->
+			<el-ignored>false</el-ignored>
+			<!-- 页面编码字符集 -->
+			<page-encoding>UTF-8</page-encoding>
+			<!-- 不允许使用Java脚本 -->
+			<scripting-invalid>true</scripting-invalid>
+		</jsp-property-group>
+		
+		<!-- 配置自定义标签库 -->
+		<taglib>
+			<taglib-uri>/mytaglib</taglib-uri>
+			<taglib-location>/WEB-INF/mytaglib.tld</taglib-location>
+		</taglib>
+	</jsp-config>
 	<!-- 配置Web应用初始化参数 -->
 	<context-param>
 		<param-name>driver</param-name>
@@ -61,13 +94,6 @@
 		<!-- 指定Servlet映射的URL地址，相当于为@WebServlet指定urlPattern属性 -->
 		<url-pattern>/firstServlet</url-pattern>
 	</servlet-mapping>	
-	<!-- 配置自定义标签库 -->
-	<jsp-config>
-		<taglib>
-			<taglib-uri>/mytaglib</taglib-uri>
-			<taglib-location>/WEB-INF/mytaglib.tld</taglib-location>
-		</taglib>
-	</jsp-config>
 	<!-- 配置Filter -->
 	<filter>
 		<!-- Filter名，相当于@WebFilter中的 filterName属性-->
