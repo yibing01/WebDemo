@@ -57,8 +57,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	</tr>
     	<!-- 使用ne比较运算符 -->
     	<tr>
-    		<td>\${(10 * 10) ne 100 }</td>
-    		<td>${(10 * 10) ne 100}</</td>
+    		<td>\${(10 * 10) != 100 }</td>
+    		<td>${(10 * 10)  != 100}</</td>
     	</tr>
     	<!-- 使用eq比较运算符 -->
     	<tr>

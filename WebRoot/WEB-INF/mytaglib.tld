@@ -113,7 +113,7 @@
  	<!-- 定义函数处理类 -->
  	<function-class>ex.Functions</function-class>
  	<!-- 定义函数的实现方法 -->
- 	<function-signature>String reverse(String)</function-signature>
+ 	<function-signature>java.lang.String reverse(java.lang.String)</function-signature>
  </function>
  <!-- 定义第二个函数 -->
  <function>
@@ -122,6 +122,6 @@
  	<!-- 定义函数处理类 -->
  	<function-class>ex.Functions</function-class>
  	<!-- 定义函数的实现方法 -->
- 	<function-signature>int countChar(String)</function-signature>
+ 	<function-signature>int countChar(java.lang.String)</function-signature>
  </function>
 </taglib>
